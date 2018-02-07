@@ -19,23 +19,36 @@ export class CalculatorComponent {
 
   expressionBuilder(num: string): void {
     this.selectedNumber += num;
-    // if operator is selected, set second operand
-    if (this.operation[1].length) {
-      this.operation[2] = this.selectedNumber;
+    if (this.selectedNumber.match(/\./g) != null && this.selectedNumber.match(/\./g).length > 1) {
+      this.resetOperation();
+      this.displayError();
+      this.subDisplay = 'Cannot have two decimal points';
+      return;
     }
-    // else set first operand, clear subDisplay
+    if (this.operation[1].length) {
+      if (num === "") {
+        this.operation[2] = "-" + this.selectedNumber;
+      }
+      else {
+        this.operation[2] = this.selectedNumber;
+      }
+    }
     else {
-      this.operation[0] = this.selectedNumber;
-      this.subDisplay = '';
+      if (num === "") {
+        this.operation[0] = "-" + this.selectedNumber;
+      }
+      else {
+        this.operation[0] = this.selectedNumber;
+        this.subDisplay = '';
+      }
     }
     this.currentExpression();
   }
 
-  // store operator selected
   selectOperator(operator: string): void {
     if (!this.operation[0].length) {
       this.displayError();
-      this.subDisplay = 'Select a number first';
+      this.subDisplay = 'Enter First Number';
       return;
     }
     this.operation[1] = operator;
@@ -43,7 +56,10 @@ export class CalculatorComponent {
     this.currentExpression();
   }
 
-  // renders display of operand(s) and operator selected
+  displayError(): void {
+    this.display = 'Error'
+  }
+  
   showResult(): void {
     if (this.validateSelections()) {
       let value = this.calculate();
@@ -53,7 +69,6 @@ export class CalculatorComponent {
     }
   }
 
-  // validate user selections
   validateSelections(): boolean {
     if (!this.operation[0].length) {
       this.displayError()
@@ -62,8 +77,9 @@ export class CalculatorComponent {
     } else if (!this.operation[1].length) {
       this.displayError()
       this.subDisplay = 'Enter Operator';
+      this.resetOperation();
       return false;
-    } else if (!this.operation[1].length) {
+    } else if (!this.operation[2].length) {
       this.displayError()
       this.subDisplay = 'Enter Second Number';
       return false;
@@ -95,8 +111,14 @@ export class CalculatorComponent {
   }
 
   resetOperation(): void {
-    this.operation = [String(this.result), '', ''];
-    this.selectedNumber = '';
+    if (this.operation[1] === "+" || this.operation[1] === "-" || this.operation[1] === "*" || this.operation[1] === "/") {
+      this.operation = [String(this.result), '', ''];
+      this.selectedNumber = '';
+    }
+    else {
+      this.operation = ['', '', ''];
+      this.selectedNumber = '';
+    }
   }
 
   reset(): void {
@@ -104,9 +126,5 @@ export class CalculatorComponent {
     this.selectedNumber = '';
     this.display = '';
     this.subDisplay = '';
-  }
-
-  displayError(): void {
-    this.display = 'Error!'
   }
 }

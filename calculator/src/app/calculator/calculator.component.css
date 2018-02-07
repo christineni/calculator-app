@@ -48,12 +48,22 @@
 .buttons {
     padding: 10px;
     background-color: #FFFFFF;
+    -webkit-transition: background-color 1s ease-out;
+    -moz-transition: background-color 1s ease-out;
+    -o-transition: background-color 1s ease-out;
+    transition: background-color 1s ease-out;
     border: #3A261B solid 1px;
     opacity: .8;
 }
 
 .buttons:hover {
-    background-color: #DFDCE3;
+    background-color: #A9A9A9;
+}
+
+.buttons:active {
+  background-color: #FFFFFF;
+  background-size: 100%;
+  transition: 0s fade-out;    
 }
 
 .red {
@@ -65,12 +75,20 @@
     background-color: #AF473C;
 }
 
+.red:active {
+    background-color: #DC3545;
+}
+
 .blue {
     background-color: #17A2B8;
 }
 
 .blue:hover {
-    background-color: rgb(21, 128, 145);
+    background-color: #158091;
+}
+
+.blue:active {
+    background-color: #17A2B8; 
 }
 
 .yellow {
@@ -78,7 +96,11 @@
 }
 
 .yellow:hover {
-    background-color: rgb(163, 125, 10)
+    background-color: #A37D0A;
+}
+
+.yellow:active {
+    background-color: #FFC107;
 }
 
 .no-border {

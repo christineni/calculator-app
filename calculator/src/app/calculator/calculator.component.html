@@ -6,25 +6,25 @@
     <div id="calculatorBody">
         <div class="row">
             <div class="col no-border">
-                <div class="buttons red no-side-border  no-bottom-border" (click)="reset()" id="clear">AC</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('7')">7</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('4')">4</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('1')">1</div>
+                <div class="buttons red no-side-border no-bottom-border" (click)="reset()" id="clear">AC</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('7')">7</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('4')">4</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('1')">1</div>
                 <div id="bottomLeftButton" class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('.')">.</div>
             </div>
             <div class="col no-border">
-                <div class="buttons no-bottom-border" (click)="negateNumber('-')">+/-</div>
+                <div class="buttons no-bottom-border" (click)="expressionBuilder('')">+/-</div>
                 <div class="buttons no-bottom-border" (click)="expressionBuilder('8')">8</div>
                 <div class="buttons no-bottom-border" (click)="expressionBuilder('5')">5</div>
                 <div class="buttons no-bottom-border" (click)="expressionBuilder('2')">2</div>
                 <div class="buttons no-bottom-border" (click)="expressionBuilder('0')">0</div>
             </div>
             <div class="col no-border">
-                <div class="buttons no-side-border  no-bottom-border" (click)="selectOperator('%')">%</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('9')">9</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('6')">6</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('3')">3</div>
-                <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('00')">00</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="selectOperator('%')">%</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('9')">9</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('6')">6</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('3')">3</div>
+                <div class="buttons no-side-border no-bottom-border" (click)="expressionBuilder('00')">00</div>
             </div>
             <div class="col no-border">
                 <div class="buttons blue no-right-border no-bottom-border" (click)="selectOperator('/')">/</div>
