@@ -74,23 +74,28 @@ export class CalculatorComponent {
   calculate(): number {
     switch (this.operation[1]) {
       case "+":
-        return parseFloat(this.operation[0]) + parseFloat(this.operation[2]);
+        this.result = parseFloat(this.operation[0]) + parseFloat(this.operation[2]);
+        return this.result;
       case "-":
-        return parseFloat(this.operation[0]) - parseFloat(this.operation[2]);
+        this.result = parseFloat(this.operation[0]) - parseFloat(this.operation[2]);
+        return this.result;
       case '*':
-        return parseFloat(this.operation[0]) * parseFloat(this.operation[2]);
+        this.result = parseFloat(this.operation[0]) * parseFloat(this.operation[2]);
+        return this.result;
       case '/':
         if (parseFloat(this.operation[2]) === 0) {
           return undefined;
         }
-        return parseFloat(this.operation[0]) / parseFloat(this.operation[2]);
+        this.result = parseFloat(this.operation[0]) / parseFloat(this.operation[2]);
+        return this.result;
       case '%':
-        return parseInt(this.operation[0]) % parseFloat(this.operation[2]);
+        this.result = parseFloat(this.operation[0]) % parseFloat(this.operation[2]);
+        return this.result;
     }
   }
 
   resetOperation(): void {
-    this.operation = ['', '', ''];
+    this.operation = [String(this.result), '', ''];
     this.selectedNumber = '';
   }
 

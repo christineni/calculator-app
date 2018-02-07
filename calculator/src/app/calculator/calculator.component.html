@@ -6,7 +6,7 @@
     <div id="calculatorBody">
         <div class="row">
             <div class="col no-border">
-                <div class="buttons bg-danger no-side-border  no-bottom-border" (click)="reset()" id="clear">AC</div>
+                <div class="buttons red no-side-border  no-bottom-border" (click)="reset()" id="clear">AC</div>
                 <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('7')">7</div>
                 <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('4')">4</div>
                 <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('1')">1</div>
@@ -27,11 +27,11 @@
                 <div class="buttons no-side-border  no-bottom-border" (click)="expressionBuilder('00')">00</div>
             </div>
             <div class="col no-border">
-                <div class="buttons bg-info no-right-border no-bottom-border" (click)="selectOperator('/')">/</div>
-                <div class="buttons bg-info no-right-border no-bottom-border" (click)="selectOperator('*')">X</div>
-                <div class="buttons bg-info no-right-border no-bottom-border" (click)="selectOperator('-')">-</div>
-                <div class="buttons bg-info no-right-border no-bottom-border" (click)="selectOperator('+')">+</div>
-                <div id="bottomRightButton" class="buttons bg-warning no-right-border no-bottom-border" (click)="showResult()">=</div>
+                <div class="buttons blue no-right-border no-bottom-border" (click)="selectOperator('/')">/</div>
+                <div class="buttons blue no-right-border no-bottom-border" (click)="selectOperator('*')">*</div>
+                <div class="buttons blue no-right-border no-bottom-border" (click)="selectOperator('-')">-</div>
+                <div class="buttons blue no-right-border no-bottom-border" (click)="selectOperator('+')">+</div>
+                <div id="bottomRightButton" class="buttons yellow no-right-border no-bottom-border" (click)="showResult()">=</div>
             </div>
         </div>
     </div>
