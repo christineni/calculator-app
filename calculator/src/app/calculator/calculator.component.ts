@@ -26,22 +26,22 @@ export class CalculatorComponent {
       return;
     }
     if (this.operation[1].length) {
-      if (num === "") {
-        this.operation[2] = "-" + this.selectedNumber;
+      if (num === '' || this.operation[2].startsWith('-')) {
+        this.operation[2] = '-' + this.selectedNumber;
       }
       else {
         this.operation[2] = this.selectedNumber;
       }
     }
     else {
-      if (num === "") {
-        this.operation[0] = "-" + this.selectedNumber;
+      if (num === '' || this.operation[0].startsWith('-')) {
+        this.operation[0] = '-' + this.selectedNumber;
       }
       else {
         this.operation[0] = this.selectedNumber;
-        this.subDisplay = '';
       }
     }
+    this.subDisplay = '';
     this.currentExpression();
   }
 
