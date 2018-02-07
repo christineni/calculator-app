@@ -1,0 +1,78 @@
+#calculator {
+    margin: 5% auto;
+    max-width: 50%; 
+    border-radius: 10px;
+}
+
+#bottomLeftButton {
+    border-radius: 0 0 0 10px;
+}
+
+#bottomRightButton {
+    border-radius: 0 0 10px 0;
+}
+
+.display {
+    min-height: 75px;
+    background: #3A261B;
+    color: #FFFFFF;
+    text-align: right;
+    border-radius: 10px 10px 0 0;
+    opacity: .8;
+}
+  
+.display .main {
+    padding: 0 10px;
+    font-size: 3em;
+}
+
+.display .sub {
+    padding: 0 10px 10px 0;
+    font-size: 1em;
+}
+
+.row { 
+    /* remove margin to align row with calculator div */
+    margin: 0;
+}
+
+.row .col { 
+    /* remove padding between cols */
+    padding: 0;
+    color: #3A261B;
+    font-size: 1.3em;
+    width: 25%; 
+    cursor: pointer;
+}
+
+.buttons {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: #3A261B solid 1px;
+    opacity: .8;
+}
+
+.no-border {
+    border-style: none;
+}
+
+.no-side-border {
+    border-right-style: none;
+    border-left-style: none;
+}
+
+.no-right-border {
+    border-right-style: none;
+}
+
+.no-bottom-border {
+    border-bottom-style: none; 
+}
+
+@media screen and (min-width: 200px) and (max-width: 330px) {
+    #calculator {
+        margin: 15% auto;
+        min-width: 200px;
+        max-width: 330px;
+    }
+}
