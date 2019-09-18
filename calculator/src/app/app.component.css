@@ -6,7 +6,7 @@ div {
     left:0;
     right:0;
     overflow:scroll;
-    z-index:-3;
+    z-index:-1;
     background-image: url("../assets/whistler.png");
     background-size: cover;
     opacity: .8;
